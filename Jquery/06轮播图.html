@@ -103,7 +103,7 @@
             $(this).addClass('selected').siblings().removeClass("selected");
             $(".box-image img").eq($(this).index()).addClass("checked").siblings().removeClass("checked");
             nextIndex=$(this).index();
-    });
+        });
         $(".item-next #next").on("click",function(){
             nextIndex++;
             if(nextIndex==$(".box-item li").length){
@@ -111,7 +111,6 @@
             } 
             $(".box-item li").eq(nextIndex).addClass('selected').siblings().removeClass("selected");
             $(".box-image img").eq(nextIndex).addClass("checked").siblings().removeClass("checked");
-
         });
         $(".item-next #last").on("click",function(){
             if(nextIndex==0)
@@ -121,67 +120,7 @@
             nextIndex--;
             $(".box-item li").eq(nextIndex).addClass('selected').siblings().removeClass("selected");
             $(".box-image img").eq(nextIndex).addClass("checked").siblings().removeClass("checked");
-
         });
-    
-        /* var oUl=document.getElementById("box-item");
-        var aLi=oUl.getElementsByTagName("li");
-        var oDiv=document.getElementById("box-image");
-        var aimg=oDiv.getElementsByTagName("img");
-    
-        var oNext=document.getElementById("next");
-        var oLast=document.getElementById("last");
-        var owrap=document.getElementById("wrap");
-        var nextIndex=0;
-        for(var i=0;i<aLi.length;i++)
-        {
-            aLi[i].index=i;
-            aLi[i].onclick=function(){
-            
-                change(this.index);
-                aimg[this.index].className="checked";//图片 */
-    /*              nextIndex=this.index;
-            }
-        }
-            oNext.onclick=function(){
-                nextIndex++;
-                if(nextIndex==aLi.length){
-                    nextIndex=0;
-                }
-                change(nextIndex);
-            } 
-            oLast.onclick=function(){
-               
-                if(nextIndex==0)
-                {
-                    nextIndex=aLi.length;
-                }
-                nextIndex--;
-                change(nextIndex);
-            }
-            function change(index){
-                for(var t=0;t<aLi.length;t++)
-                {
-                    aLi[t].className="";
-                    aimg[t].className="";
-                }
-                aLi[index].className="selected";
-                aimg[index].className="checked";
-            }
-            var timer;
-            run();
-            owrap.onmouseover=function(){
-                clearInterval(timer);
-            }
-            owrap.onmouseout=function(){
-                run();
-            }
-
-            function run(){
-                timer =setInterval(function(){
-                oNext.onclick();
-                },1000);
-            } */
     </script>
     
 </body>
