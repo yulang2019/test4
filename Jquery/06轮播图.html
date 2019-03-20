@@ -99,9 +99,11 @@
     <script src="jquery-1.12.4.js"></script>
     <script>
         var nextIndex=0;
-        $(".box-item li").on("click",function(){
-            $(this).addClass('selected').siblings().removeClass("selected");
-            $(".box-image img").eq($(this).index()).addClass("checked").siblings().removeClass("checked");
+        /* console.log( $(".box-item li")); */
+        $(".box-item li").on("mouseover",function(){
+            change(($(this).index()));
+            /* $(this).addClass('selected').siblings().removeClass("selected");
+            $(".box-image img").eq($(this).index()).addClass("checked").siblings().removeClass("checked"); */
             nextIndex=$(this).index();
         });
         $(".item-next #next").on("click",function(){
@@ -109,8 +111,7 @@
             if(nextIndex==$(".box-item li").length){
                 nextIndex=0;
             } 
-            $(".box-item li").eq(nextIndex).addClass('selected').siblings().removeClass("selected");
-            $(".box-image img").eq(nextIndex).addClass("checked").siblings().removeClass("checked");
+            change(nextIndex);
         });
         $(".item-next #last").on("click",function(){
             if(nextIndex==0)
@@ -118,9 +119,14 @@
             nextIndex=$(".box-item li").length;
             }
             nextIndex--;
-            $(".box-item li").eq(nextIndex).addClass('selected').siblings().removeClass("selected");
-            $(".box-image img").eq(nextIndex).addClass("checked").siblings().removeClass("checked");
+           change(nextIndex);
         });
+        function change(num){
+            $(".box-item li").eq(num).addClass('selected').siblings().removeClass("selected");
+            $(".box-image img").eq(num).addClass("checked").siblings().removeClass("checked");
+            
+        }
+        
     </script>
     
 </body>
