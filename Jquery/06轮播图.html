@@ -125,6 +125,20 @@
             $(".box-item li").eq(num).addClass('selected').siblings().removeClass("selected");
             $(".box-image img").eq(num).addClass("checked").siblings().removeClass("checked");   
         }
+        var times;
+        run();
+       function run(){
+        times=setInterval(function(){
+            var times= $(".item-next #next").trigger("click");
+        },1100);
+       }
+       
+        $("#wrap").on("mouseover",function(){
+            clearInterval(times);
+        });
+        $("#wrap").on("mouseout",function(){
+            run();
+        }); 
     </script>
     
 </body>
